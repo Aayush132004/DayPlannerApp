@@ -396,3 +396,15 @@ main{
     background-color:rgb(71, 189, 199);
     color:white
 }
+@media (max-width:353px) {
+    #clock-min{
+        font-family: "Roboto", serif;
+        color:white;
+        font-size:15vh;
+    }
+    #clock-sec{
+        font-family: "Roboto", serif;
+        color:rgb(66, 230, 205);
+        font-size:15vh;
+    }
+}

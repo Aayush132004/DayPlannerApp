@@ -11,6 +11,7 @@ days.forEach((value)=>{
 
 //Todays date details
 const Today=new Date();
+let date=Today.getDate();
 function fill_calendar(Today){
 const months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
 const current_day=Today.getDay();
@@ -51,12 +52,11 @@ const current_month_days=new Date(current_year,current_month+1,0).getDate();//nx
     calendar_click.addEventListener('click', (event) => {
       if (event.target.innerHTML >= 1 && event.target.innerHTML <= 31) {
         date = event.target.textContent;
-        const print_date = document.getElementById('left-head');
         print_date.textContent = `${date},${months[Today.getMonth()]} ${Today.getFullYear()}`;
         
         // Update date key
-        date = print_date.innerHTML;
-    
+        date = print_date.textContent;
+         
         const task_container = document.getElementById('tasks');
         task_container.innerHTML = "";
     
@@ -64,13 +64,13 @@ const current_month_days=new Date(current_year,current_month+1,0).getDate();//nx
         if (!task_data[date]) {
           task_data[date] = [];
           task_status_count(task_data[date]); // Set counts to 0
-        } else {
+          } 
           // Display tasks for the selected date
           task_data[date].forEach((data) => {
             display_task(data);
           });
           task_status_count(task_data[date]); // Update counts
-        }
+        
       }
     });
     
@@ -107,7 +107,7 @@ form_appearance();
 
 //add task data
 
-let date=document.getElementById('left-head').innerHTML;
+date=document.getElementById('left-head').innerHTML;
 const task_data={
     [date]:[],
 }
@@ -150,12 +150,15 @@ function add_task(){const submit=document.querySelector('.add');
   const task={};
   task.title=title;
   task.checked=false;
-   date=document.getElementById('left-head').textContent;
+  date=document.getElementById('left-head').textContent;
+  if (!task_data[date]) {
+    task_data[date] = [];
+}
   task_data[date].push(task);
   task_form.style.display="none";
   const task_container=document.getElementById('tasks');
   task_container.innerHTML="";
-   
+   console.log(task_data);
   task_data[date].forEach((data)=>{
     display_task(data);
         })
@@ -255,4 +258,64 @@ sort_all.addEventListener('click',()=>{
 })
 
 
+// ******************main2 logic********
+
+const start=document.getElementById('start');
+let run;
+start.addEventListener('click',()=>{
+let initial=Date.now();
+start.style.display="none";
+
+ run=setInterval(()=>{
+  let final=Date.now();
+  let b=final-initial;
+  let minute=Math.floor((b/60000));
+  let seconds=Math.floor(((b/1000)%60));
+  const min=document.getElementById('clock-min');
+  if(minute<10){
+    min.textContent='0'+minute+':';
+  }
+  else
+  min.textContent=minute+":";
+  const sec=document.getElementById('clock-sec');
+  if(seconds<10){
+    sec.textContent='0'+seconds;
+  }
+  else
+  sec.textContent=seconds;
+},1000)
+})
+
+const stop=document.getElementById('stop');
+stop.addEventListener('click',()=>{
+const min=document.getElementById('clock-min');
+min.textContent='00:';
+const sec=document.getElementById('clock-sec');
+sec.textContent='00';
+start.style.display="";
+clearInterval(run);
+start.removeEventListener('click',()=>{
+      const initial=Date.now();
+      start.style.display="none";
+      setInterval(()=>{
+        let final=Date.now();
+        let b=final-initial;
+        let minute=Math.floor((b/60000));
+        let seconds=Math.floor(((b/1000)%60));
+        const min=document.getElementById('clock-min');
+        console.log(min.textContent);
+        if(minute<10){
+          min.textContent='0'+minute+':';
+        }
+        else
+        min.textContent=minute+":";
+        const sec=document.getElementById('clock-sec');
+        if(seconds<10){
+          sec.textContent='0'+seconds;
+        }
+        else
+        sec.textContent=seconds;
+      },1000)
+      })
+})
 

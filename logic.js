@@ -150,6 +150,7 @@ function add_task(){const submit=document.querySelector('.add');
   const task={};
   task.title=title;
   task.checked=false;
+   date=document.getElementById('left-head').textContent;
   task_data[date].push(task);
   task_form.style.display="none";
   const task_container=document.getElementById('tasks');

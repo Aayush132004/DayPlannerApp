@@ -400,11 +400,11 @@ main{
     #clock-min{
         font-family: "Roboto", serif;
         color:white;
-        font-size:25vw;
+        font-size:15vh;
     }
     #clock-sec{
         font-family: "Roboto", serif;
         color:rgb(66, 230, 205);
-        font-size:25vw;
+        font-size:15vh;
     }
 }

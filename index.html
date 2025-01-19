@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <Header>
+        <h2>
+            
+        </h2>
+    </Header>
+    <main>
+        <div id="left">
+            <div id="left-head"></div>
+            <div id="calendar">
+                <div id="calendar-month">
+                    <h2></h2>
+                </div>
+            
+            <div id="calendar-box">
+            </div>
+            </div>
+            <div id="left-foot">
+               <div id="first">
+                <p>
+                  COMPLETED TASKS
+                </p>
+                <div id="completed_count"></div>
+               </div>
+               <div id="second">
+                <p>PENDING TASKS</p>
+                 <div id="pending_count"></div>
+               </div>
+            </div>
+        </div>
+        <div id="right">
+           <div id="right-top">
+            <div class="sort">
+                <button class="sort-btn" id="all">All Tasks<i class="ri-arrow-drop-down-line"></i></i></button>
+                <button class="sort-btn" id="complete">Completed<i class="ri-arrow-drop-down-line"></i></i></button>
+                <button class="sort-btn" id="pending">Pending<i class="ri-arrow-drop-down-line"></i></i></button>
+                
+            </div>
+            <button class="sort-btn" id="add_task"><i class="ri-add-line"></i></button>
+           </div>
+           <div id="tasks">
+
+           </div>
+          
+        </div>
+        <form id="task_form">
+            <input type="text" name="task_title" id="task_title" placeholder="Type Title Of Task" required>
+
+             <div class="submit-form">
+                <button type="submit" class="add">Add Task</button>
+                <button type="button" class="close">Close</button>
+             </div>
+            </form>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="./logic.js"></script>
+</body>
+</html>

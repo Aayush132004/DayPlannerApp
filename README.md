@@ -25,7 +25,7 @@ Vanilla JS
 
 FUTURE ENHANCEMENT
 can make task to store in some database or localstorage for future remainder
-Deployed link https://app.netlify.com/sites/beorganize/
+Deployed link [https://app.netlify.com/sites/beorganize/](https://beorganize.netlify.app/)
 
 can add some notification sysem of task
 can add a mindmap maker

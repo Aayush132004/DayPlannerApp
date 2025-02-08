@@ -1,4 +1,5 @@
-# Hackathon2
+# DayPlanner
+
 INTRODUCTION
 This is a task organizer site we can add the task of any date by choosing from calendar and can fo the task of that day along with the pending and completed task count
 can get to know about our progess.
